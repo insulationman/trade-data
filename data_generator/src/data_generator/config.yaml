@@ -1,0 +1,7 @@
+database:
+  dir: "data/db"
+  name: "app_data.db"
+baci:
+  dir: "data/baci"
+json:
+  dir: "data/json/"

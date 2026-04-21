@@ -1,0 +1,42 @@
+[project]
+name = "data-generator"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Adam Liljenberg",email = "adam@cabanossy.se"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<3.14.1 || >3.14.1"
+dependencies = [
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "sqlalchemy (>=2.0.0,<3.0.0)",
+    "tqdm (>=4.66.0,<5.0.0)",
+    "orjson (>=3.11.5,<4.0.0)",
+    "networkx (>=3.6.1,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "data_generator", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+hello = "data_generator.cli:hello_world"
+create_db = "data_generator.cli:create_db"
+import_baci_products = "data_generator.cli:import_baci_products"
+import_baci_countries = "data_generator.cli:import_baci_countries"
+import_baci_trade_rows = "data_generator.cli:import_baci_trade_rows"
+export_trades_by_product = "data_generator.cli:export_trade_by_product"
+export_product_trades_per_year = "data_generator.cli:export_product_trades_per_year"
+export_countries_and_products = "data_generator.cli:export_countries_and_products"
+calculate_market_concentration = "data_generator.cli:calculate_yearly_product_market_concentration"
+calculate_betweenness_centrality = "data_generator.cli:calculate_betweenness_centrality"
+export_yearly_country_product_value = "data_generator.cli:export_yearly_country_product_value"
+export_country_product_value_all_years = "data_generator.cli:export_country_trade_value_all_years"
+export_market_concentrations = "data_generator.cli:export_market_concentrations"
+export_trade_balances_per_country = "data_generator.cli:export_trade_balances_per_country"
+export_market_sizes_per_year = "data_generator.cli:export_market_sizes_per_year"
+export_betweenness_centrality = "data_generator.cli:export_betweenness_centrality"
